@@ -1,0 +1,104 @@
+*{
+    box-sizing: border-box;
+margin: 0px;
+font-size: 16px;
+line-height: 1.4;
+}
+#firstMain{
+height: 600px;
+display: flex;
+gap: 5px;
+padding: 5px;
+}
+#firstArti{
+    min-width:120px;
+    height: 250px;
+    padding:5px 5px 0px 5px;
+    color: white;
+    background-color: black;
+    margin-left: 5px;
+    position: sticky;
+    top: 0;
+}
+#first{
+    height: 3000px;
+    background-color: teal;
+}
+#firstArti :first-child{
+display: flex;
+width: 100%;
+align-items: center;
+}
+#imagery{
+    width:35px;
+    height: 30px;
+    background-color:black;
+    
+}
+
+#backDivy{
+    margin-top: 10px;
+
+ 
+}
+#backDivy a img {
+    height: 30px;
+    
+    
+}
+#imt{
+    background-color:white;
+    border-radius: 7px;
+    border: 5px solid black;
+    border-style: outset;
+    transition: all 0.3s linear;
+}
+#imt:hover{
+    scale: 0.9;
+}
+#backDivy a{
+text-decoration: none;
+color: white;
+
+}
+
+input{
+    margin: 5px 0px;
+}
+#cate1{
+    margin-top: 15px;
+}
+h3{
+    text-align: center;
+    text-decoration: underline;
+    margin: 10px 0px;
+    color: gray;
+    
+}
+
+#firstMain{
+
+}
+#second{
+    width: 100%;
+}
+.color{
+    background-color:black!important;
+    color: white !important ;
+    border-color: yellow;
+z-index: 3;
+}
+#videox{
+    margin: 5px 10px 5px 0px;
+}
+
+
+@media (min-width:300px) and (max-width:768px){
+    #videox{
+        width: 100%;
+    }
+   
+}
+@media (min-width:769px)  { 
+    
+}
