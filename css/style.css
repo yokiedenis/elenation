@@ -192,7 +192,7 @@ nav>ul>li>a::before {
     background-repeat: no-repeat;
     background-position: center;
     width: 95%;
-    height: 600px;
+    height: 550px;
     justify-content: first baseline;
     display: flex;
     flex-direction: column;
