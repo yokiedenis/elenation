@@ -419,7 +419,6 @@ header {
     top: 23px;
     left: 7px;
     margin: 0px;
-    z-index: -100;
 }
 
 /* #profile {
@@ -1191,7 +1190,7 @@ a:focus-visible {
         z-index: 10;
         position: absolute;
         top: 0px;
-        left: 5px;
+        left: 0px;
         padding: 10px;
         transition: all 5s linear;
     }
