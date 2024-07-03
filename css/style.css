@@ -314,7 +314,7 @@ nav>ul>li>a::before {
 /* instead of linkingto another page create in js */
 .splash {
     background: url("../media/test4.png");
-    /* background-position: center; */
+    background-position: center; 
 	background-size: 90%;
     animation: splashit 21s steps(150) infinite;
 }
