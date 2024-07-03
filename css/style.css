@@ -406,7 +406,7 @@ header {
 #eli{
     position: absolute;
     left: 50px;
-    animation: vibration1 7s infinite linear;
+    animation: vibration1 12s infinite ease-in-out;
 }
 @keyframes vibration1 {
     0%, 100% { transform: translateX(0); }
