@@ -313,14 +313,14 @@ nav>ul>li>a::before {
 /* make reposnive */
 /* instead of linkingto another page create in js */
 .splash {
-    background: url("../media/swely.svg");
+    background: url("../media/test4.png");
     /* background-position: center; */
     animation: splashit 7s steps(50) infinite;
 }
 
 /* fallback */
 .no-svg .splash {
-    background: url("../media/swely.svg");
+    background: url("../media/test4.png");
 
 }
 
