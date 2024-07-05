@@ -125,20 +125,22 @@ hr {
     color: black !important;
     border-color: yellow;
     z-index: 3;
+
 }
 
 body {
     background-color: black;
     color: white;
+    transition: background 1s;
 }
 
 /* style for theme button */
 
-#themeSwitch:hover {
+/* #themeSwitch:hover {
     color: white;
     background-color: white;
     cursor: pointer;
-}
+} */
 
 /* style for links */
 
@@ -410,6 +412,7 @@ header {
 }
 
 
+
 @keyframes dance {
 	0% {
 		transform: scale(1.5) skewX(0);
@@ -428,11 +431,14 @@ header {
             20%, 40%, 60%, 80% { transform: translateX(3px); }
 }
 
+
 #side-bar-toggle {
     position: absolute;
     top: 23px;
     left: 7px;
     margin: 0px;
+   
+    z-index: 1000;
 }
 
 /* #profile {
@@ -1173,7 +1179,7 @@ a:focus-visible {
   }
   .card2{
       background-color: #BC1A6E;
-  }
+  } 
   .card3{
       background-color: #34b9be;
   }
@@ -1182,12 +1188,297 @@ a:focus-visible {
       border: 0.5px solid goldenrod;
   }
 
-  #themeSwitch{
+  /* #themeSwitch{
     position: absolute;
     top: 35px;
     right: 50px;
     margin: 0px;
+  } */
+
+  .wrapper {
+    position: absolute;
+    background-color: #34b9be;
+    min-width: 120px;
+    min-height: 50px;
+    max-width: 120px;
+    max-height: 50px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+     overflow: hidden;
+    transition: all 0.1s linear;
+    margin: 0px;
+    box-sizing: border-box;
+    top: 15px;
+    right: 10px;
   }
+  .wrapper_active {
+    background-color: black;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+  }
+  .sun {
+    width: 40px;
+    height: 40px;
+    background-color: #e7739a;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 7px;
+    box-shadow: inset 10px 10px 15px 0px #e7739a, 5px 10px 10px 1px palevioletred, inset -10px -10px 10px -1px #d30186;
+    z-index: 3;
+    animation: sunFrame-2 1s linear;
+  }
+  .sun_active {
+    animation: sunFrame 1s linear;
+    transform: translate(70px) translateY(-50%);
+    background-color: lightgray;
+    box-shadow: inset 10px 10px 15px 0px rgba(255, 255, 255, 1), 5px 10px 10px 1px rgba(0, 0, 0, 0.4), inset -10px -10px 10px -1px pink;
+  }
+  @keyframes sunFrame {
+    0%{
+      transform: translate(0px) translateY(-50%);
+      background-color: #d30186;
+      box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    }
+    75%{
+      transform: translate(70px) translateY(-50%);
+      background-color: gray;
+      box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    }
+    100%{
+      transform: translate(70px) translateY(-50%);
+    }
+  }
+  @keyframes sunFrame-2 {
+    0%{
+      transform: translate(70px) translateY(-50%);
+      box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    }
+    75%{
+      transform: translate(0px) translateY(-50%);
+      box-shadow: inset 10px 10px 15px 0px #d30186, 5px 10px 10px 1px rgba(0, 0, 0, 0.4), inset 0px -10px 10px -1px rgba(184, 147, 33, 1);
+    }
+    100%{
+      transform: translate(0px) translateY(-50%);
+    }
+  }
+
+ 
+
+  
+
+  .sun-circle {
+    width: 70px;
+    height: 50px;
+    background-color: #e7739a;
+    /* box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5); */
+    border-radius: 35px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.2;
+    filter: blur(2px);
+    transition: all 1s linear;
+  }
+  .sun-circle_active {
+    transform: translate(100px) translateY(-50%);
+  }
+  .sun-circle-two {
+      width: 70px;
+      height: 50px;
+  }
+  .sun-circle-two_active {
+    transform: translate(100px) translateY(-50%);  
+  }
+  .sun-circle-three {
+      width: 70px;
+      height: 50px;
+    border-radius: 35px;
+  }
+  .sun-circle-three_active {
+    transform: translate(100px) translateY(-50%);
+  }
+  .background {
+    width: 240px;
+    height: 50px;
+    position: relative;
+    transform: translateY(50%);
+    transition: all 0.7s linear;
+  }
+  .background-2 {
+    width: 120px;
+    height: 50px;
+    position: absolute;
+    top: -50%;
+    transition: all 0.7s linear;
+  }
+  .background_active {
+    transform: translateY(50%);
+  }
+  .background-2_active {
+    transform: translateY(50%);
+  }
+  .star {
+    width: 5px;
+    height: 5px;
+    background-color: pink;
+    border-radius: 3px;
+    position: absolute;
+    top: 40px;
+    left: 100px;
+  }
+  .star-2 {
+    top: 40px;
+    left: 50px;
+    background-color: transparent;
+    border: 0.5px solid goldenrod;
+  }
+  .star-3 {
+    top: 50px;
+    left: 70px;
+    background-color:palevioletred;
+  }
+
+  .star-5 {
+    top: 50px;
+    left: 100px;
+    background-color: #34b9be;
+  }
+  .star-6 {
+    top: 60px;
+    left: 90px;
+    background-color: palevioletred;
+  }
+  .star-7 {
+    top: 40px;
+    left: 70px;
+    width: 10px;
+    height: 10px;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+  .star-8 {
+    top: 100px;
+    left: 40px;
+    width: 15px;
+    height: 15px;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+  .star-9 {
+    top: 10px;
+    left: 20px;
+    width: 10px;
+    height: 10px;
+    background-color: #d30186;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+  .star-10 {
+    top: 40px;
+    left: 30px;
+    width: 10px;
+    height: 10px;
+    background-color: #35b9be;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+  .star-11 {
+    top: 10px;
+    left: 10px;
+    width: 5px;
+    height: 5px;
+    background-color:darkslategrey;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+  .clouds {
+    width: 80%;
+    height: 50px;
+    position: relative;
+    /* right: 0px; */
+    top: 50%;
+    opacity: 0.75;
+    z-index: 2;
+  }
+  .clouds-2 {
+    top: 50%;
+    left: -3%;
+    transform: rotate(-5deg);
+    opacity: 0.55;
+    z-index: 1;
+  }
+  .cloud-1 {
+    width: 30px;
+    height: 50px;
+    background-color: wheat;
+    border-radius: 15px;
+    position: absolute;
+    top: 20px;
+    /* right: 10px; */
+  }
+  .cloud-2 {
+    width: 50px;
+    height: 50px;
+    background-color: black ;
+    border-radius: 30px;
+    position: absolute;
+    top: -50px;
+    right: -40px;
+  }
+  .cloud-3 {
+    width: 60px;
+    height: 40px;
+    background-color:palevioletred;
+    border-radius: 30px;
+    position: absolute;
+    top: 0px;
+    right: -90px;
+  }
+  .cloud-4 {
+    width: 40px;
+    height: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    position: absolute;
+    top: -10px;
+    right: 150px;
+    opacity: 0.5;
+  }
+  .cloud-5 {
+    width: 60px;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 5px;
+    left: 20px;
+  }
+  .cloud-6 {
+    width: 60px;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    position: absolute;
+    top: -20px;
+    left: 60px;
+  }
+  .cloud-7 {
+    width: 50px;
+    height: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    position: absolute;
+    top: 10px;
+    left: 75px;
+  }
+  .cloud-8 {
+    width: 60px;
+    height: 40px;
+    background-color: #d30186;
+    border-radius: 10px;
+    position: absolute;
+    top: -50px;
+    left: 40px;
+  }
+
+
+
 @media (min-width: 300px) and (max-width: 768px) {
     #galleryLink {
         display: none;
@@ -1205,7 +1496,6 @@ a:focus-visible {
         top: 0px;
         left: 0px;
         padding: 10px;
-        transition: all 5s linear;
     }
 
     .sideBar>a {
