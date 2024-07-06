@@ -123,7 +123,6 @@ hr {
 .color {
     background-color:white !important;
     color: black !important;
-    border-color: yellow;
     z-index: 3;
 
 }
@@ -434,22 +433,12 @@ header {
 
 #side-bar-toggle {
     position: absolute;
-    top: 23px;
-    left: 7px;
-    margin: 0px;
-   
+    top: 25px;
+    left: 14px;
     z-index: 1000;
 }
 
-/* #profile {
-  margin-right: 30px;
-  width: 100px;
-  height: 100px;
-  border-radius: 12px;
-  background-image: url(/media/transperant.png);
-  background-repeat: no-repeat;
-  background-size: 100%;
-} */
+
 
 .dropdown {
     color: #35b9be;
@@ -1197,11 +1186,11 @@ a:focus-visible {
 
   .wrapper {
     position: absolute;
-    background-color: #34b9be;
+    background-color: #2768aa;
     min-width: 120px;
-    min-height: 50px;
     max-width: 120px;
-    max-height: 50px;
+    min-height: 40px;
+    max-height: 40px;
     border-radius: 10px;
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
      overflow: hidden;
@@ -1209,42 +1198,42 @@ a:focus-visible {
     margin: 0px;
     box-sizing: border-box;
     top: 15px;
-    right: 10px;
+    right: 20px;
   }
   .wrapper_active {
     background-color: black;
-    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
-  }
+    box-shadow: inset 1px 10px 15px 1px rgba(0, 0, 0, 0.4), inset -10px -10px 5px 1px rgba(0, 0, 0, 0.5),  0px 5px 5px rgba(255, 255, 255, 1), inset 1px 15px 5px 1px rgba(0, 0, 0, 0.6);
+}
   .sun {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background-color: #e7739a;
     border-radius: 20px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: 7px;
-    box-shadow: inset 10px 10px 15px 0px #e7739a, 5px 10px 10px 1px palevioletred, inset -10px -10px 10px -1px #d30186;
+    box-shadow: inset 10px 10px 15px 0px rgba(255, 255, 255, 0.5), 5px 10px 10px 1px rgba(0, 0, 0, 0.4), inset 0px -10px 10px -1px rgba(184, 147, 33, 1);
     z-index: 3;
     animation: sunFrame-2 1s linear;
   }
   .sun_active {
     animation: sunFrame 1s linear;
     transform: translate(70px) translateY(-50%);
-    background-color: lightgray;
-    box-shadow: inset 10px 10px 15px 0px rgba(255, 255, 255, 1), 5px 10px 10px 1px rgba(0, 0, 0, 0.4), inset -10px -10px 10px -1px pink;
-  }
+    background-color: #34b9be;
+    box-shadow: inset 10px 10px 15px 0px rgba(255, 255, 255, 1), 5px 10px 10px 1px rgba(0, 0, 0, 0.4), inset -10px -10px 10px -1px rgba(151, 153, 162, 1);
+}
   @keyframes sunFrame {
     0%{
       transform: translate(0px) translateY(-50%);
-      background-color: #d30186;
-      box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-    }
+      background-color: pink;
+      box-shadow: inset 10px 10px 15px 0px #e7739a, 5px 10px 10px 1px rgba(0, 0, 0, 0.4), inset 0px -10px 10px -1px rgba(184, 147, 33, 1);
+  }
     75%{
       transform: translate(70px) translateY(-50%);
-      background-color: gray;
-      box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-    }
+      background-color: #c3c9d5;
+      box-shadow: inset 10px 10px 15px 0px pink, 5px 10px 10px 1px rgba(0, 0, 0, 0.4), inset -10px -10px 10px -1px rgba(151, 153, 162, 1);
+  }
     100%{
       transform: translate(70px) translateY(-50%);
     }
@@ -1252,71 +1241,107 @@ a:focus-visible {
   @keyframes sunFrame-2 {
     0%{
       transform: translate(70px) translateY(-50%);
-      box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-    }
+      box-shadow: inset 10px 10px 15px 0px #e7739a, 5px 10px 10px 1px rgba(0, 0, 0, 0.4), inset -10px -10px 10px -1px rgba(151, 153, 162, 1);
+  }
     75%{
       transform: translate(0px) translateY(-50%);
-      box-shadow: inset 10px 10px 15px 0px #d30186, 5px 10px 10px 1px rgba(0, 0, 0, 0.4), inset 0px -10px 10px -1px rgba(184, 147, 33, 1);
-    }
+      box-shadow: inset 10px 10px 15px 0px rgba(255, 255, 255, 0.5), 5px 10px 10px 1px rgba(0, 0, 0, 0.4), inset 0px -10px 10px -1px #d30186;
+  }
     100%{
       transform: translate(0px) translateY(-50%);
     }
   }
 
- 
+  .sun-spot {
+    width: 10px;
+    height: 10px;
+    border-radius: 15px;
+    background-color: #999eaf;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    opacity: 0;  
+  }
+  .sun-spot-2 {
+    top: 5px;
+    left: 15px;
+    width: 15px;
+    height: 15px;
+  }
+  .sun-spot-3 {
+    top: 10px;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+  }
+  .sun-spot_active {
+    animation: spotFrame 1s linear;
+    opacity: 1;
+  }
 
+  @keyframes spotFrame {
+    0%{
+      opacity: 0;
+    }
+    80%{
+      opacity: 0.5;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
   
 
   .sun-circle {
     width: 70px;
     height: 50px;
     background-color: #e7739a;
-    /* box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5); */
     border-radius: 35px;
     position: absolute;
     top: 50%;
+    left: -22px;
     transform: translateY(-50%);
     opacity: 0.2;
-    filter: blur(2px);
+    filter: blur(1px);
     transition: all 1s linear;
   }
   .sun-circle_active {
-    transform: translate(100px) translateY(-50%);
+    transform: translate(90px) translateY(-50%);
   }
   .sun-circle-two {
-      width: 70px;
-      height: 50px;
+      width: 90px;
+      height: 70px;
   }
   .sun-circle-two_active {
-    transform: translate(100px) translateY(-50%);  
+    transform: translate(80px) translateY(-50%);  
   }
   .sun-circle-three {
-      width: 70px;
-      height: 50px;
+      width: 100px;
+      height: 70px;
     border-radius: 35px;
   }
   .sun-circle-three_active {
-    transform: translate(100px) translateY(-50%);
+    transform: translate(60px) translateY(-50%);
   }
   .background {
-    width: 240px;
-    height: 50px;
+    width: 200px;
+    height: 60px;
     position: relative;
-    transform: translateY(50%);
+    transform: translateY(0%);
     transition: all 0.7s linear;
   }
   .background-2 {
-    width: 120px;
-    height: 50px;
+    width: 200px;
+    height: 60px;
     position: absolute;
     top: -50%;
     transition: all 0.7s linear;
   }
   .background_active {
-    transform: translateY(50%);
+    transform: translateY(70%);
   }
   .background-2_active {
-    transform: translateY(50%);
+    transform: translateY(70%);
   }
   .star {
     width: 5px;
@@ -1340,27 +1365,29 @@ a:focus-visible {
   }
 
   .star-5 {
-    top: 50px;
-    left: 100px;
-    background-color: #34b9be;
+    top: 0px;
+    left:50px;
+    background-color: #e7739a;
   }
   .star-6 {
-    top: 60px;
-    left: 90px;
-    background-color: palevioletred;
+    top: -5px;
+    left: 20px;
+    background-color: goldenrod;
   }
   .star-7 {
     top: 40px;
     left: 70px;
     width: 10px;
     height: 10px;
+    background-color: blue;
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
   }
   .star-8 {
-    top: 100px;
-    left: 40px;
+    top: 47px;
+    left: 45px;
     width: 15px;
     height: 15px;
+    background-color: green;
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
   }
   .star-9 {
@@ -1372,11 +1399,11 @@ a:focus-visible {
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
   }
   .star-10 {
-    top: 40px;
-    left: 30px;
+    top:20px;
+    left: 40px;
     width: 10px;
     height: 10px;
-    background-color: #35b9be;
+    background-color: #34b9be;
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
   }
   .star-11 {
@@ -1388,53 +1415,54 @@ a:focus-visible {
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
   }
   .clouds {
-    width: 80%;
+    width: 100%;
     height: 50px;
     position: relative;
-    /* right: 0px; */
+    right: 0px;
     top: 50%;
     opacity: 0.75;
     z-index: 2;
+    background-color:pink;
   }
   .clouds-2 {
-    top: 50%;
+    top: -10%;
     left: -3%;
     transform: rotate(-5deg);
     opacity: 0.55;
     z-index: 1;
   }
   .cloud-1 {
-    width: 30px;
+    width: 50px;
     height: 50px;
     background-color: wheat;
-    border-radius: 15px;
+    border-radius: 25px;
     position: absolute;
-    top: 20px;
-    /* right: 10px; */
+    top: -20px;
+    right: 0px;
   }
   .cloud-2 {
     width: 50px;
     height: 50px;
-    background-color: black ;
-    border-radius: 30px;
+    background-color: whitesmoke ;
+    border-radius: 25px;
     position: absolute;
-    top: -50px;
-    right: -40px;
+    top: -10px;
+    right: 0px;
   }
   .cloud-3 {
     width: 60px;
-    height: 40px;
-    background-color:palevioletred;
+    height: 60px;
+    background-color:whitesmoke;
     border-radius: 30px;
     position: absolute;
-    top: 0px;
-    right: -90px;
-  }
+    top: -20px;
+    right: 50px;
+  } 
   .cloud-4 {
     width: 40px;
-    height: 30px;
-    background-color: #ffffff;
-    border-radius: 10px;
+    height: 40px;
+    background-color: wheat;
+    border-radius: 20px;
     position: absolute;
     top: -10px;
     right: 150px;
@@ -1442,39 +1470,42 @@ a:focus-visible {
   }
   .cloud-5 {
     width: 60px;
-    height: 40px;
+    height: 60px;
     background-color: #ffffff;
-    border-radius: 20px;
+    border-radius: 30px;
     position: absolute;
-    bottom: 5px;
+    bottom: -12px;
     left: 20px;
   }
   .cloud-6 {
     width: 60px;
-    height: 40px;
+    height: 60px;
     background-color: #ffffff;
-    border-radius: 20px;
+    border-radius: 30px;
     position: absolute;
-    top: -20px;
-    left: 60px;
+    top: -13px;
+    left: 55px;
   }
   .cloud-7 {
     width: 50px;
-    height: 30px;
+    height: 50px;
     background-color: #ffffff;
-    border-radius: 15px;
+    border-radius: 25px;
     position: absolute;
-    top: 10px;
-    left: 75px;
+    top: -30px;
+    left: 83px;
+    opacity: 0.9;
   }
   .cloud-8 {
     width: 60px;
-    height: 40px;
-    background-color: #d30186;
-    border-radius: 10px;
+    height: 60px;
+    background-color: transparent;
+    border-radius: 20px;
     position: absolute;
     top: -50px;
     left: 40px;
+    opacity: 0.9;
+    border: 1px dashed yellow;  
   }
 
 
@@ -1516,7 +1547,7 @@ a:focus-visible {
     }
 
     .fa-solid {
-        margin: 5px 0px 5px 20px;
+        margin: 0px 30px;
     }
 
     #topElement {
@@ -1548,6 +1579,9 @@ a:focus-visible {
 }
 
 @media (min-width: 769px) {
+    .wrapper{
+        top: 80px;
+    }
     .containery { 
         width: 100%; 
         margin-top: 0;

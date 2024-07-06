@@ -39,7 +39,6 @@ function sideBar() {
  `;
   body.appendChild(sideBarElement);
 }
-
 let wr = document.querySelector('.wrapper');
 let bg = document.querySelector('.background');
 let bg2 = document.querySelector('.background-2');
@@ -59,6 +58,7 @@ wr.addEventListener('click', () => {
     circles[1].classList.add('sun-circle-two_active');
     circles[2].classList.add('sun-circle-three_active');
     bg2.classList.add('background-2_active');
+    spots.forEach((item) => {item.classList.add('sun-spot_active')})
    flag = true;
   }
   else{
@@ -70,6 +70,7 @@ wr.addEventListener('click', () => {
     circles[1].classList.remove('sun-circle-two_active');
     circles[2].classList.remove('sun-circle-three_active');
     bg2.classList.remove('background-2_active');
+    spots.forEach((item) => {item.classList.remove('sun-spot_active')})
     flag = false;
   }
 })
