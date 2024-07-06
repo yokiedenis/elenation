@@ -1174,7 +1174,7 @@ a:focus-visible {
   }
   .card4{
       background-color: transparent;
-      /* border: 0.5px solid goldenrod; */
+      border: none;
   }
 
   /* #themeSwitch{
