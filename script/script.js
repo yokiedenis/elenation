@@ -24,6 +24,7 @@ function sideBar() {
   const body = document.getElementById("body");
   const sideBarElement = document.createElement("div");
   sideBarElement.className = "sideBar";
+  sideBarElement.id = "sideBar";
   sideBarElement.innerHTML = `<div id="topElement">
    <i onclick="closeToggle()" class="fa-solid fa-xmark fa-beat-fade fa-xl" style="color: #34b9be;"></i>
 
