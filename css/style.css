@@ -1360,14 +1360,13 @@ a:focus-visible {
 .figure {
   background: url("../media/walk.svg") no-repeat;
   width: 180px;
-  height: 250px;
+  height: 265px;
   /* transform: translate3D(0px, 30px, 0px); */
-  animation: walk 2s steps(9) infinite;
+  animation: walk 4s steps(9) infinite;
   backface-visibility: hidden;
   perspective: 1000;
   z-index: 1000;
   transition: transform 0.5s ease-in-out, background-position 0.5s ease-in-out;
-  border-bottom: 1px solid #2768aa;
 }
 
 @keyframes walk {
@@ -1375,12 +1374,15 @@ a:focus-visible {
     background-position: 0 0;
     transform: translate3D(0px, 30px, 0px);
   }
-  100% {
+  50% {
     background-position: 0 -2376px;
-    transform: translate3D(300px, 30px, 0px);
+    transform: translate3D(400px, 30px, 0px);
+  }
+  100% {
+    background-position: 0 0;
+    transform: translate3D(0px, 30px, 0px);
   }
 }
-
 #mainBody {
   width: 100%;
   margin: 50px 0px;
