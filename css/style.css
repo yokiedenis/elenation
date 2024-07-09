@@ -57,10 +57,11 @@
   flex-wrap: wrap;
   justify-content: center;
   padding-top: 20px;
-  background-image: url(../media/back123.svg);
+  background-image: url(../media/Rbg.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: left;
+
 }
 
 #spany {
