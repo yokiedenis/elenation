@@ -2161,6 +2161,9 @@ html:not(.lazy-images) .gallery-item a:after {
 
 
 
+
+
+
 @media (min-width: 300px) and (max-width: 768px) {
   #galleryLink {
     display: none;
