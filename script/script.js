@@ -33,7 +33,7 @@ function sideBar() {
  <a href="#">Home</a>
  <a href="#">Resources</a>
  <a href="#">Programs</a>
- <a href="#">Gallery</a>
+ <a href="../elenation/gallery.html">Gallery</a>
  <a href="#">Blog</a>
  <a href="#">FAQs</a>
  `;

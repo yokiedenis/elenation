@@ -525,8 +525,7 @@ footer {
   z-index: 10000;
 }
 
-table,
-tr {
+table , tr {
   width: 80% !important;
   text-align: center !important;
   border-collapse: collapse !important;
@@ -535,23 +534,27 @@ tr {
   z-index: 10000;
 }
 
-table>tr>td {
+table tr td {
   min-width: 100px !important;
   z-index: 10000;
+  height: 30px;
 }
 
-table>tr>td>a:hover {
+table tr td a:hover {
   background-color: #d30186 !important;
   opacity: 0.8 !important;
   z-index: 10000;
 }
 
-table>tr>td>a {
-  color: #e7739a !important;
+table tr td a {
+  color: #34b9be !important;
   text-decoration: none !important;
   padding: 8px !important;
-  border: 1px solid #34b9be !important;
+  border: 0.5px solid #34b9be !important;
   z-index: 10000;
+  background-color: transparent;
+  font-weight: 700;
+  
 }
 
 #socials {
@@ -1474,6 +1477,7 @@ a:focus-visible {
   box-sizing: border-box;
   top: 15px;
   right: 20px;
+  cursor: grab;
 }
 
 .wrapper_active {
@@ -2158,8 +2162,14 @@ html:not(.lazy-images) .gallery-item a:after {
 .gallery-size-thumbnail .gallery-caption {
   display: none;
 }
+/* a way to pop images on click using css */
+/* .prodImg {
+  transition: transform .5s;
+}
 
-
+.prodImg:hover {
+  transform: scale(1.5);
+} */
 
 
 

@@ -1,22 +1,386 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- meta data is provides extra information about a website -->
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="nguvunation" content="IE=7">
+    <meta name="description" content="nguvunation">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="nguvunation">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nguvunation</title>
+    <link rel="shortcut icon" href="./media/logo.jpeg"  type="jpeg">
+    <!-- linking css stylesheet -->
     <link rel="stylesheet" href="./css/style.css ">
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-
+    <link rel="stylesheet" href="./blog/style.css ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.css'>
+    <link rel='stylesheet'
+        href='https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
 
+<body id="body">
+    <!-- .goals to focus.
+    1.SEO in development
+    2.UI/UX pleasing to the eye, visually appealing (trippie even)
+    3.open source and free, easy to read code
+    4.animations and animations
+    5.invite donations
+    6.first prototype is an invitation to treat
+    -->
+
+    <!-- features 
+    1.contact us form
+    2.gallery
+    3.impact on society in a nutshell in numbers
+    **events announcement
+    **about team
+    4.stories of impact // blog // comments section // 
+    events announcement // talk about myth in girl stuff
+    5.newsletter subscription
+    6.a piont of sale for products made by the ladies // merch // art
+    -->
+    <!-- <i class="fa-regular fa-moon fa-flip fa-xl" id="themeSwitch" style="color: #ff0095;"></i> -->
+
+
+    <!-- this is the tiny vibrating icon that toggles the sidebar -->
+    <div id="side-bar-toggle">
+        <i id="icon4" class="fa-solid fa-bars fa-shake fa-xl" style="color:#d30186"></i>
+    </div>
+
+    <!-- theme switching button -->
+    <div class="wrapper">
+        <div class="sun-circle"></div>
+        <div class="sun-circle sun-circle-two"></div>
+        <div class="sun-circle sun-circle-three"></div>
+        <div class="sun">
+            <div class="sun-spot"></div>
+            <div class="sun-spot sun-spot-2"></div>
+            <div class="sun-spot sun-spot-3"></div>
+        </div>
+        <div class="background-2">
+            <div class="star"></div>
+            <div class="star star-2"></div>
+            <div class="star star-3"></div>
+            <div class="star star-5"></div>
+            <div class="star star-6"></div>
+            <div class="star star-7"></div>
+            <div class="star star-8"></div>
+            <div class="star star-9"></div>
+            <div class="star star-10"></div>
+            <div class="star star-11"></div>
+        </div>
+        <div class="background">
+            <div class="clouds">
+                <div class="cloud-1"></div>
+                <div class="cloud-2"></div>
+                <div class="cloud-3"></div>
+                <div class="cloud-4"></div>
+                <div class="cloud-5"></div>
+                <div class="cloud-6"></div>
+                <div class="cloud-7"></div>
+            </div>
+            <div class="clouds clouds-2">
+                <div class="cloud-1"></div>
+                <div class="cloud-2"></div>
+                <div class="cloud-3"></div>
+                <div class="cloud-4"></div>
+                <div class="cloud-5"></div>
+                <div class="cloud-6"></div>
+                <div class="cloud-7"></div>
+                <div class="cloud-8"></div>
+            </div>
+        </div>
+    </div>
+
+
+    
   
+    <div id="bodex">
+      <div style="position: relative; left: 220px; top: -70px;" class="wavyHeading">
+        <h1>NguvuNation</h1>
+        <h1>NguvuNation</h1>
+    </div>
+      <div class="wrappier">
+            <div class="itemize menu">
+              <div class="linee linee1"></div>
+              <div class="linee linee2"></div>
+              <div class="linee linee3"></div>
+            </div>
+            <div class="itemize gallerys">
+              <div class="dot dot1"></div>
+              <div class="dot dot2"></div>
+              <div class="dot dot3"></div>
+              <div class="dot dot4"></div>
+              <div class="dot dot5"></div>
+              <div class="dot dot6"></div>
+            </div>
+            <button id="switcher" class="itemize add">
+              <div class="circle">
+                <div class="close">
+                <div class="line line1"></div>
+                <div class="line line2"></div>
+              </div>
+              </div>
+              <input type="search" placeholder="search" class="search" />
+              
+            </button>
+      
+            <div class="nav-items items1">
+              <img src="./home.png" class="imgaine" alt="">
+            </div>
+            <div class="nav-items items2">
+              <img src="./stack.png" class="imgaine" alt="">
+            </div>
+            <div class="nav-items items3">
+              <img src="./airplane.png" style="height: 25px;" class="imgaine" alt="">
+            </div>
+            <div class="nav-items items4">
+              <img src="./readme.png" style="height: 30px;" class="imgaine" alt="">
+            </div>
+            <div class="box">
+              <div class="box-line box-line1"><a href="#">Resources</a></div>
+              <div class="box-line box-line2"><a href="#">Programs</a></div>
+              <div class="box-line box-line4"><a href="#">Contact Us</a></div>
+              <div class="box-line box-line3"><a href="#">Individual Programs</a></div>
+
+            </div>
+          </div>
+      
+          <div class="effecty"></div>
+       </div>
+
+
+    <!-- featured images section -->
+    <section id="mainBody">
+         <!-- walking a'kidi svg  -->
+          <div>
+              <div class="figure">
+              </div>
+          </div>
+<!-- breathe work heading -->
+          <div style="position: relative;top: 40px; left: 100px;" class="wavyHeading">
+              <h1>Gallery</h1>
+              <h1>Gallery</h1>
+          </div>
+
+
+
+<!-- featured pieces of art section -->
+    <h2 style="text-align: center;">featured pieces</h2>
+    <div class="wrappy ">
+        <div class="itemy">
+            <div class="itim" tabindex="0" style="background-image: url(./media/mural.jpg)"></div>
+            <div class="itim" tabindex="0" style="background-image: url(./media/mine.jpg)"></div>
+            <div class="itim" tabindex="0" style="background-image: url(./media/internetedit.jpeg)"></div>
+            <div class="itim" tabindex="0" style="background-image: url(./media/word4.jfif)"></div>
+        </div>
+    </div>
+
+
+    <!-- this is the gallery section -->
+     <!-- we use an a tag with image to display min pop up -->
+    <div id="bodyB">
+
+        <div class="gallery " itemscope="" itemtype="http://schema.org/ImageGallery">
+
+            <figure class="gallery-item horizontal" itemprop="associatedMedia" itemscope=""
+                itemtype="http://schema.org/ImageObject"><a href="./media/chairpage.jfif" itemprop="contentUrl"
+                    data-size="500x500"><img class="lazyload lazypreload fadein" src="./media/chairpage.jfif" /></a>
+                <figcaption class="gallery-caption" itemprop="caption description">Chair's page</figcaption>
+            </figure>
+            <figure class="gallery-item horizontal" itemprop="associatedMedia" itemscope=""
+                itemtype="http://schema.org/ImageObject"><a href="./media/IMG-20240619-WA0008.jpg" itemprop="contentUrl"
+                    data-size="500x500"><img class="lazyload lazypreload fadein"
+                        src="./media/IMG-20240619-WA0008.jpg" /></a>
+                <figcaption class="gallery-caption " itemprop="caption description">Hello from Poland</figcaption>
+            </figure>
+
+            <figure class="gallery-item" itemprop="associatedMedia" itemscope=""
+                itemtype="http://schema.org/ImageObject"><a href="./media/product.jfif" itemprop="contentUrl"
+                    data-size="1000x700"><img class="lazyload lazypreload fadein" src="./media/product.jfif" /></a>
+                <figcaption class="gallery-caption" itemprop="caption description">Caption1</figcaption>
+            </figure>
+            <figure class="gallery-item horizontal" itemprop="associatedMedia" itemscope=""
+                itemtype="http://schema.org/ImageObject"><a href="./media/maker.jpg" itemprop="contentUrl"
+                    data-size="800x800"><img class="lazyload lazypreload fadein" src="./media/maker.jpg" /></a>
+                <figcaption class="gallery-caption" itemprop="caption description">Caption2</figcaption>
+            </figure>
+            <figure class="gallery-item vertical" itemprop="associatedMedia" itemscope=""
+                itemtype="http://schema.org/ImageObject"><a href="./media/pickchair2.jpg" itemprop="contentUrl"
+                    data-size="800x1000"><img class="lazyload lazypreload fadein" src="./media/pickchair2.jpg" /></a>
+                <figcaption class="gallery-caption" style="position: relative; top: 20px;"
+                    itemprop="caption description">Caption</figcaption>
+            </figure>
+            <figure class="gallery-item" itemprop="associatedMedia" itemscope=""
+                itemtype="http://schema.org/ImageObject"><a href="./media/loli1.jpg" itemprop="contentUrl"
+                    data-size="500x500"><img class="lazyload lazypreload fadein" src="./media/loli1.jpg" /></a>
+                <figcaption style="position: relative; top: 20px;" class="gallery-caption"
+                    itemprop="caption description">Have a nice day</figcaption>
+            </figure>
+            <figure class="gallery-item " itemprop="associatedMedia" itemscope=""
+                itemtype="http://schema.org/ImageObject"><a href="./media/picch.jpg" itemprop="contentUrl"
+                    data-size="320x500"><img class="lazyload lazypreload fadein" src="./media/picch.jpg" /></a>
+                <figcaption class="gallery-caption" itemprop="caption description">This is a very very long description
+                    to show you it's possible to add something like this</figcaption>
+            </figure>
+
+            <figure class="gallery-item horizontal" itemprop="associatedMedia" itemscope=""
+                itemtype="http://schema.org/ImageObject"><a href="./media/prize.jfif" itemprop="contentUrl"
+                    data-size="800x500"><img class="lazyload lazypreload fadein" src="./media/prize.jfif" /></a>
+                <figcaption class="gallery-caption" itemprop="caption description">Caption5</figcaption>
+            </figure>
+            <figure class="gallery-item" itemprop="associatedMedia" itemscope=""
+                itemtype="http://schema.org/ImageObject"><a href="./media/dumspec.jfif" itemprop="contentUrl"
+                    data-size="500x500"><img class="lazyload lazypreload fadein" src="./media/dumspec.jfif" /></a>
+                <figcaption class="gallery-caption" itemprop="caption description">Caption6</figcaption>
+            </figure>
+            <figure class="gallery-item vertical" itemprop="associatedMedia" itemscope=""
+                itemtype="http://schema.org/ImageObject"><a href="./media/prize2.jfif" itemprop="contentUrl"
+                    data-size="1000x1000"><img class="lazyload lazypreload fadein" src="./media/prize2.jfif" /></a>
+                <figcaption class="gallery-caption" itemprop="caption description">Caption7</figcaption>
+            </figure>
+            <figure class="gallery-item" itemprop="associatedMedia" itemscope=""
+                itemtype="http://schema.org/ImageObject"><a href="./media/inspo.jpeg" itemprop="contentUrl"
+                    data-size="500x500"><img class="lazyload lazypreload fadein" src="./media/inspo.jpeg" /></a>
+                <figcaption class="gallery-caption" itemprop="caption description">Caption8</figcaption>
+            </figure>
+            <figure class="gallery-item vertical" itemprop="associatedMedia" itemscope=""
+                itemtype="http://schema.org/ImageObject"><a href="./media/dum4.jfif" itemprop="contentUrl"
+                    data-size="500x500"><img class="lazyload lazypreload fadein" src="./media/dum4.jfif" /></a>
+                <figcaption class="gallery-caption" itemprop="caption description">Caption9</figcaption>
+            </figure>
+            <figure class="gallery-item" itemprop="associatedMedia" itemscope=""
+                itemtype="http://schema.org/ImageObject"><a href="./media/artic.jpeg" itemprop="contentUrl"
+                    data-size="500x500"><img class="lazyload lazypreload fadein" src="./media/artic.jpeg"></a>
+                <figcaption class="gallery-caption" itemprop="caption description">Caption10</figcaption>
+            </figure>
+            <figure class="gallery-item" itemprop="associatedMedia" itemscope=""
+                itemtype="http://schema.org/ImageObject"><a href="./media/honey2.jfif" itemprop="contentUrl"
+                    data-size="500x500"><img class="lazyload lazypreload fadein" src="./media/honey2.jfif" /></a>
+                <figcaption class="gallery-caption" itemprop="caption description">Caption11</figcaption>
+            </figure>
+            <figure class="gallery-item" itemprop="associatedMedia" itemscope=""
+                itemtype="http://schema.org/ImageObject"><a href="./media/dum3.jfif" itemprop="contentUrl"
+                    data-size="800x1000"><img class="lazyload lazypreload fadein" src="./media/dum3.jfif" /></a>
+                <figcaption class="gallery-caption" itemprop="caption description">Caption12</figcaption>
+            </figure>
+        </div>
+    </div>
+    <!-- still part of the gallery, this is the display pop up holder -->
+    <!-- Root element of PhotoSwipe. Must have class pswp.-->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+        <!--
+            Background of PhotoSwipe.
+            It's a separate element as animating opacity is faster than rgba().
+            -->
+        <div class="pswp__bg"></div>
+        <!-- Slides wrapper with overflow:hidden.-->
+        <div class="pswp__scroll-wrap">
+            <!--
+              Container that holds slides.
+              PhotoSwipe keeps only 3 of them in the DOM to save memory.
+              Don't modify these 3 pswp__item elements, data is added later on.
+              -->
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+            <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed.-->
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <!-- Controls are self-explanatory. Order can be changed.-->
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <button class="pswp__button pswp__button--share" title="Share"></button>
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                    <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR-->
+                    <!-- element will get class pswp__preloader--active when preloader is running-->
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div>
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<!-- scripts -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.0.2/lazysizes.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.js'></script>
     <script src="./script/script.js"></script>
+    <script src="./blog/script.js"></script>
+
+    <footer>
+        <p style="color: red;">will work no matter where you click around the word</p>
+        <table>
+            <tr>
+                <td><a href="">Home</a></td>
+                <td><a href="">Programs</a></td>
+                <td><a href="">Resources</a></td>
+            </tr>
+            <tr>
+                <td><a href="">Gallery</a></td>
+                <td><a href="">Blog</a></td>
+                <td><a href="">About Us</a></td>
+            </tr>
+
+            <tr>
+                <td><a href="">Podcast</a></td>
+                <td><a href="">Events</a></td>
+                <td><a href="">FAQS</a></td>
+            </tr>
+            <tr>
+                <td><a href="">Contact US</a></td>
+                <td><a href="">boys</a></td>
+                <td><a href="">Volunteer Today</a></td>
+            </tr>
+        </table>
+        <div id="socials">
+            <a class="link link--leda" href=""><img class="sociali" src="./media/facebook.png" alt="">
+                <caption>facebook</caption>
+            </a>
+            <a class="link link--leda" href="https://x.com/NguvuNation"><img class="sociali" src="./media/twitter.png"
+                    alt="">
+                <caption>Twitter</caption>
+            </a>
+            <a class="link link--leda" href="mailto:yokasdenis@gmail.com"><img class="sociali" src="./media/mail.png"
+                    alt="">
+                <caption>Mail</caption>
+            </a>
+            <a class="link link--leda" href="#"><img class="sociali" src="./media/instagram.png" alt="">
+                <caption>Instagram</caption>
+            </a>
+            <a class="link link--leda" href="tel:+256779773247"><img class="sociali" src="./media/phone.png"
+                    alt="">call</a>
+
+        </div>
+        <em
+            style=" position:absolute; right: 50px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bolder;">powered
+            by <span style="color: #d30186;">A'kidi</span> <b><strike>ft</strike></b> <span
+                style="color:#b402ab;">yoki3</span></em>
+    </footer>
 </body>
+
 </html>

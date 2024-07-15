@@ -4,64 +4,101 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="nguvunation" content="IE=7">
+    <meta name="description" content="nguvunation">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="nguvunation">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nguvunation</title>
+    <link rel="shortcut icon" href="../media/logo.jpeg"  type="jpeg">
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
+<!-- this is the tiny vibrating icon that toggles the sidebar -->
+<div id="side-bar-toggle">
+  <i id="icon4" class="fa-solid fa-bars fa-shake fa-xl" style="color:#d30186"></i>
+</div>
 
-  
-    <div id="bodex">
-      <div style="position: relative; left: 220px; top: -50px;" class="wavyHeading">
-        <h1>NguvuNation</h1>
-        <h1>NguvuNation</h1>
-    </div>
-      <div class="wrappier">
-            <div class="itemize menu">
-              <div class="linee linee1"></div>
-              <div class="linee linee2"></div>
-              <div class="linee linee3"></div>
-            </div>
-            <div class="itemize gallery">
-              <div class="dot dot1"></div>
-              <div class="dot dot2"></div>
-              <div class="dot dot3"></div>
-              <div class="dot dot4"></div>
-              <div class="dot dot5"></div>
-              <div class="dot dot6"></div>
-            </div>
-            <button id="switcher" class="itemize add">
-              <div class="circle">
-                <div class="close">
-                <div class="line line1"></div>
-                <div class="line line2"></div>
-              </div>
-              </div>
-              <input type="search" placeholder="search" class="search" />
-              
-            </button>
-      
-            <div class="nav-items items1">
-              <img src="./home.png" class="imgaine" alt="">
-            </div>
-            <div class="nav-items items2">
-              <img src="./stack.png" class="imgaine" alt="">
-            </div>
-            <div class="nav-items items3">
-              <img src="./airplane.png" style="height: 25px;" class="imgaine" alt="">
-            </div>
-            <div class="nav-items items4">
-              <img src="./readme.png" style="height: 30px;" class="imgaine" alt="">
-            </div>
-            <div class="box">
-              <div class="box-line box-line1"><a href="#">Resources</a></div>
-              <div class="box-line box-line2"><a href="#">Programs</a></div>
-              <div class="box-line box-line4"><a href="#">Contact Us</a></div>
-              <div class="box-line box-line3"><a href="#">Individual Programs</a></div>
+<!-- theme switching button -->
+<div class="wrapper">
+  <div class="sun-circle"></div>
+  <div class="sun-circle sun-circle-two"></div>
+  <div class="sun-circle sun-circle-three"></div>
+  <div class="sun">
+      <div class="sun-spot"></div>
+      <div class="sun-spot sun-spot-2"></div>
+      <div class="sun-spot sun-spot-3"></div>
+  </div>
+  <div class="background-2">
+      <div class="star"></div>
+      <div class="star star-2"></div>
+      <div class="star star-3"></div>
+      <div class="star star-5"></div>
+      <div class="star star-6"></div>
+      <div class="star star-7"></div>
+      <div class="star star-8"></div>
+      <div class="star star-9"></div>
+      <div class="star star-10"></div>
+      <div class="star star-11"></div>
+  </div>
+  <div class="background">
+      <div class="clouds">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="cloud-4"></div>
+          <div class="cloud-5"></div>
+          <div class="cloud-6"></div>
+          <div class="cloud-7"></div>
+      </div>
+      <div class="clouds clouds-2">
+          <div class="cloud-1"></div>
+          <div class="cloud-2"></div>
+          <div class="cloud-3"></div>
+          <div class="cloud-4"></div>
+          <div class="cloud-5"></div>
+          <div class="cloud-6"></div>
+          <div class="cloud-7"></div>
+          <div class="cloud-8"></div>
+      </div>
+  </div>
+</div>
+    <!-- this is the header, it contains the navigation bar code -->
+    <header>
+      <nav id="navy">
+          <ul>
+              <img src="../media/transperant.png" alt="logo" id="logo">
 
-            </div>
-          </div>
-      
-          <div class="effecty"></div>
-       </div>
+              <li><a href="../index.html">Home</a></li>
+              <li id="secondLink"><a href="./resources.html">Resources</a></li>
+              <li class="link link--helike" id="blog"><a href="./index.html">Blog</a></li>
+              <li>
+                  <!-- dropdown list -->
+                  <div class="dropdown">
+                      <button class="dropbtn">Programs
+                          <i class="fa-solid fa-caret-down fa-fade fa-lg" style="color: #ff007b;"></i>
+                      </button>
+                      <div class="dropdown-content">
+                          <a href="./program.html">Education</a>
+                          <a href="./program.html">Health</a>
+                          <a href="./program.html">Empowerment</a>
+                          <a href="./program.html">Individual Programs</a>
+                      </div>
+                  </div>
+                  <!-- end of dropdownlist -->
+              </li>
+              <li id="firstLink"><a href="#">Contact us</a></li>
+              <li id="galleryLink"><a style="border: none;" href="../gallery.html"><i
+                          class="fa-brands fa-envira fa-shake fa-xl" style="color: #ff0095;">G</i></a></li>
+
+
+          </ul>
+
+      </nav>
+  </header>
 
     <main id="firstMain">
       <!-- <div class="wap">
@@ -224,5 +261,6 @@
       </section>
     </main>
     <script src="./script.js"></script>
+    <script src="../script/script.js"></script>
   </body>
 </html>
