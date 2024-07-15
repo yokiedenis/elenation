@@ -83,12 +83,12 @@ h3{
 #second{
     width: 100%;
 }
-.color{
+/* .color{
     background-color:black!important;
     color: white !important ;
     border-color: yellow;
 z-index: 3;
-}
+} */
 #videox{
     margin: 5px 10px 5px 0px;
 }
@@ -240,9 +240,9 @@ z-index: 3;
   }
   .effect {
     position: absolute;
-    transform: translate(-50%, -50%) scale(0);
-    top: 50%;
-    left: 50%;
+    transform: translate(-10%, -10%) scale(0);
+    top: 10%;
+    left: 10%;
     border: 6px solid rgba(255, 255, 255, 0.37);
     height: 100%;
     border-radius: 50%;
@@ -250,7 +250,7 @@ z-index: 3;
     transition: opacity 0.5s ease 0.4s, transform 0.5s;
   }
   .effectshow {
-    transform: translate(-50%, -50%) scale(1.3);
+    transform: translate(-10%, -10%) scale(1.3);
     opacity: 0;
   }
   
@@ -268,6 +268,7 @@ z-index: 3;
 display: flex;
 align-items: center;
 justify-content: center;
+z-index: 1000000;
 }
 /* main wrapper and its layout */
 .wrappier {
