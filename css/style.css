@@ -8,7 +8,7 @@
   font-size: 16px;
   line-height: 1.4;
   overflow-wrap: break-word;
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
 }
 
 .tangerine-regular {
@@ -466,8 +466,8 @@ header {
 
 #side-bar-toggle {
   position: absolute;
-  top: 25px;
-  left: 14px;
+  top: 43px;
+  left: 13px;
   z-index: 1000;
 }
 
@@ -1309,12 +1309,12 @@ a:focus-visible {
 }
 
 
-.conty {
+.wavyHeading {
   position: relative;
   top: -30px;
 }
 
-.conty h1 {
+.wavyHeading h1 {
   font-size: 3em;
   position: absolute;
   transform: translate(-50%, -50%);
@@ -1323,13 +1323,13 @@ a:focus-visible {
   text-shadow: 0px 2px 5px #373b44;
 }
 
-.conty h1:nth-child(1) {
+.wavyHeading h1:nth-child(1) {
   color: #e7739a;
   -webkit-text-stroke: 2px #d30186;
 
 }
 
-.conty h1:nth-child(2) {
+.wavyHeading h1:nth-child(2) {
   color: #34b9be;
   animation: animate1 5s ease-in-out infinite;
 }
