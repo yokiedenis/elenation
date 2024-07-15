@@ -256,10 +256,11 @@ z-index: 3;
   
 
 #bodex {
-  background: url(./Sunsetback.jpg);
+  background: url(../media/word.jfif);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  width: 100%;
   background-blend-mode:overlay;
   height: 50vh;
   border:2px  solid #34b9be;
@@ -448,8 +449,7 @@ justify-content: center;
   display: grid;
   grid-gap: 10px;
   transition: height 0.1s cubic-bezier(0.075, 0.82, 0.165, 1);
-
-  z-index: 0;
+  z-index: 1000;
 }
 .box-line {
   width: 100px;
