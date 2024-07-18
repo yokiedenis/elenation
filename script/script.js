@@ -33,7 +33,7 @@ function sideBar() {
  <a href="#">Home</a>
  <a href="#">Resources</a>
  <a href="#">Programs</a>
- <a href="../elenation/gallery.html">Gallery</a>
+ <a href="./gallery.html">Gallery</a>
  <a href="#">Blog</a>
  <a href="#">FAQs</a>
  `;
@@ -278,3 +278,72 @@ function called() {
 }
 
 called();
+// let themeSwitchButton = document.getElementById("switcher")
+// themeSwitchButton.addEventListener("click",function(){
+//     document.body.classList.toggle("color");
+// })
+
+document.addEventListener("DOMContentLoaded", function() {
+  captchaCode();
+  
+  document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    var captchaVal = document.getElementById("captcha").textContent;
+    var captchaCode = document.querySelector(".captcha").value;
+    if (captchaVal === captchaCode) {
+      document.querySelector(".captcha").style.color = "#609D29";
+    } else {
+      document.querySelector(".captcha").style.color = "#CE3B46";
+    }
+    
+    var emailFilter = /^[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    var emailText = document.querySelector(".email").value;
+    if (emailFilter.test(emailText)) {
+      document.querySelector(".email").style.color = "#609D29";
+    } else {
+      document.querySelector(".email").style.color = "#CE3B46";
+    }
+    
+    var nameFilter = /^([a-zA-Z \t]{3,15})+$/;
+    var nameText = document.querySelector(".name").value;
+    if (nameFilter.test(nameText)) {
+      document.querySelector(".name").style.color = "#609D29";
+    } else {
+      document.querySelector(".name").style.color = "#CE3B46";
+    }
+    
+    var messageText = document.querySelector(".message").value.length;
+    if (messageText > 10) {
+      document.querySelector(".message").style.color = "#609D29";
+    } else {
+      document.querySelector(".message").style.color = "#CE3B46";
+    }
+    
+    if ((captchaVal!== captchaCode) || (!emailFilter.test(emailText)) || (!nameFilter.test(nameText)) || (messageText <= 10)) {
+      return false;
+    }
+    if ((captchaVal === captchaCode) && (emailFilter.test(emailText)) && (nameFilter.test(nameText)) && (messageText > 10)) {
+      sendMessage();
+      document.getElementById("contactForm").submit();
+    }
+  });       
+});
+
+function captchaCode() {
+  var captcha = '';
+  var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  
+  for (var i = 0; i < 4; i++) {
+    captcha += possible.charAt(Math.floor(Math.random() * possible.length));
+  }
+  
+  document.getElementById("captcha").textContent = captcha;
+}
+
+function sendMessage() {
+  document.getElementById("contactForm").style.display = "none";
+  var messageElement = document.createElement("h2");
+  messageElement.textContent = "Message sent!";
+  document.getElementById("form").appendChild(messageElement);
+}

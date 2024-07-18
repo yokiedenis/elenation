@@ -2173,6 +2173,101 @@ html:not(.lazy-images) .gallery-item a:after {
 
 
 
+#contact {
+  overflow: auto;
+  background:transparent;
+  color: #d30186;
+  margin: 15px auto;
+  width: 410px;
+}
+
+#contact #form {
+  width: 410px;
+  /* float: left; */
+}
+
+#contact #form h2 {
+  font: 48px;
+}
+
+#contact #form span {
+  display: block;
+  float: left;
+  width: 100px;
+  padding-top: 5px;
+  font: 14px;
+}
+#code{
+  background-color: blue;
+  color: white;
+}
+#buttonic{
+  background-color: red;
+}
+#contact #form input {
+  float: left;
+  width: 255px;
+  border: 0px;
+  color: #F1F1F1;
+  padding: 10px 10px 10px 30px;
+  font: 11px/20px'Open Sans', Verdana, Helvetica, sans-serif;
+  margin-bottom: 10px;
+}
+
+#contact #form textarea {
+  float: left;
+  border: 0px;
+  width: 255px;
+  height: 140px;
+  padding: 10px 10px 10px 30px;
+  font: 11px/20px'Open Sans', Verdana, Helvetica, sans-serif;
+  color: #F1F1F1;
+  resize: none;
+}
+
+#contact #form input.name {
+  background-color: #222222;
+}
+
+#contact #form input.email {
+  background: #222222;
+}
+
+#contact #form input.captcha {
+  background: #222222;
+}
+
+#contact #form textarea.message {
+  background: #222222 !important; 
+}
+
+#contact #form input.submit {
+  cursor: pointer;
+  width: 85px;
+  height: 30px;
+  float: right;
+  padding: 0px 0px 5px 0px;
+  margin: 10px 16px 0px 0px;
+  background: #222222;
+  color: #F1F1F1;
+  font: 14px/16px'Bree Serif', Georgia, serif;
+}
+
+#captcha  {
+  width: 44px;
+  color: white;
+}
+
+ #captcha input {
+  background:blueviolet;
+  margin: 5px 0 0;
+  padding: 0;
+  border: medium none;
+  cursor: pointer;
+  width: 15px;
+}
+
+
 
 @media (min-width: 300px) and (max-width: 768px) {
   #galleryLink {
