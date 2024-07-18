@@ -2241,7 +2241,7 @@ html:not(.lazy-images) .gallery-item a:after {
   background: #222222 !important; 
 }
 
-#contact #form input.submit {
+#contact #form button.submit {
   cursor: pointer;
   width: 85px;
   height: 30px;

@@ -285,16 +285,15 @@ called();
 
 document.addEventListener("DOMContentLoaded", function() {
   captchaCode();
-  
+
   document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    
     var captchaVal = document.getElementById("captcha").textContent;
     var captchaCode = document.querySelector(".captcha").value;
-    if (captchaVal === captchaCode) {
-      document.querySelector(".captcha").style.color = "#609D29";
-    } else {
+    if (captchaVal!== captchaCode) {
       document.querySelector(".captcha").style.color = "#CE3B46";
+      event.preventDefault(); // prevent submission if captcha is invalid
+    } else {
+      document.querySelector(".captcha").style.color = "#609D29";
     }
     
     var emailFilter = /^[a-zA-Z0-9._%+-]{1,64}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -321,13 +320,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     
     if ((captchaVal!== captchaCode) || (!emailFilter.test(emailText)) || (!nameFilter.test(nameText)) || (messageText <= 10)) {
-      return false;
-    }
-    if ((captchaVal === captchaCode) && (emailFilter.test(emailText)) && (nameFilter.test(nameText)) && (messageText > 10)) {
+      event.preventDefault(); // prevent submission if any validation fails
+    } else {
       sendMessage();
-      document.getElementById("contactForm").submit();
     }
-  });       
+  });
 });
 
 function captchaCode() {
