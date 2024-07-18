@@ -260,7 +260,29 @@ goals
     <section id="contact">
         <div class="content">
             <div id="form">
-                <form action="https://api.web3forms.com/submit"  id="contactForm" method="POST">
+                <form action="https://api.web3forms.com/submit"  autocomplete="on" id="contactForm" method="POST">
+                    <input type="hidden" name="access_key" value="b01a6768-7abc-4640-b8f6-f042d0e4994a">
+                        <!-- Optional: Can be type="hidden" or type="text" for subject -->
+    <input type="hidden" name="subject" value="New Submission from Web3Forms">
+          <!-- Default is "Notifications". you can overwrite here -->
+    <input type="hidden" name="from_name" value="Your Website Name">
+  
+    <!-- Optional: To send the form submission as CC email -->
+    <input type="hidden" name="ccemail" value="combinedcohort@gmailmail.com">
+
+    <!-- Optional: default replyto will be "email" (if available), 
+         you may overwrite here -->
+    <input type="hidden" name="replyto" value="customer@example.com">
+
+    <!-- Required: if submitting without Javascript 
+         (because by default web3form outputs json) -->
+
+    <!-- If javascript, use "window.location.hash" for redirects -->
+    <input type="hidden" name="redirect" value="https://web3forms.com/success">
+
+    <!-- Optional: But Recommended: To Prevent SPAM Submission. 
+         Make sure its hidden by default -->
+    <input type="checkbox" name="botcheck" id="" style="display: none;">
                     <span>Name</span>
                     <input type="text" name="name" class="name" placeholder="Enter your name" tabindex=1 />
                     <span>Email</span>
@@ -270,7 +292,7 @@ goals
                     <span>Message</span>
                     <textarea name="message" class="message" placeholder="Enter your message" tabindex=4></textarea>
                     <input type="submit" name="submit" value="Send e-mail" class="submit" tabindex=5>
-                    <input type="hidden" name="apikey" value="b01a6768-7abc-4640-b8f6-f042d0e4994a">
+                    
                 </form>
             </div>
             </div>
