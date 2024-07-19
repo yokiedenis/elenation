@@ -2177,13 +2177,13 @@ html:not(.lazy-images) .gallery-item a:after {
   overflow: auto;
   background:transparent;
   color: #d30186;
-  margin: 15px auto;
+  margin: 5px auto 50px auto;
   width: 410px;
 }
 
 #contact #form {
   width: 410px;
-  /* float: left; */
+  float: left;
 }
 
 #contact #form h2 {
