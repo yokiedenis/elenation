@@ -26,9 +26,9 @@
 
 
 .artic {
-  height: 450px;
+  height: 520px;
   width: 320px;
-  min-width: 200px;
+  min-width: 320px;
   margin-left: 15px;
   box-shadow: rgba(0, 0, 0, 0.4) 0px -50px 40px -32px inset;
   padding: 10px;
@@ -2267,7 +2267,25 @@ html:not(.lazy-images) .gallery-item a:after {
   width: 15px;
 }
 
+.artic ol {
+  list-style-type: none;
+  counter-reset: item;
+}
+.artic li {
+  counter-increment: item;
+  margin-bottom: 5px;
+}
 
+.artic li:before {
+  content: counter(item);
+  background: #e7739a;
+  border-radius: 100%;
+  color: white;
+  width: 1.2em;
+  text-align: center;
+  display: inline-block;
+
+}
 
 @media (min-width: 300px) and (max-width: 768px) {
   #galleryLink {
