@@ -74,214 +74,13 @@ wr.addEventListener('click', () => {
     flag = false;
   }
 })
-
-function called() {
-  var initPhotoSwipeFromDOM;
-
-  initPhotoSwipeFromDOM = function(gallerySelector) {
-    var closest, galleryElements, hashData, i, l, onThumbnailsClick, openPhotoSwipe, parseThumbnailElements, photoswipeParseHash;
-    // parse slide data (url, title, size ...) from DOM elements 
-    // (children of gallerySelector)
-    parseThumbnailElements = function(el) {
-      var figureEl, i, item, items, linkEl, numNodes, size, thumbElements;
-      thumbElements = el.childNodes;
-      numNodes = thumbElements.length;
-      items = [];
-      figureEl = void 0;
-      linkEl = void 0;
-      size = void 0;
-      item = void 0;
-      i = 0;
-      while (i < numNodes) {
-        figureEl = thumbElements[i];
-        // <figure> element
-        // include only element nodes 
-        if (figureEl.nodeType !== 1) {
-          i++;
-          continue;
-        }
-        linkEl = figureEl.children[0];
-        // <a> element
-        size = linkEl.getAttribute('data-size').split('x');
-        // create slide object
-        item = {
-          src: linkEl.getAttribute('href'),
-          w: parseInt(size[0], 10),
-          h: parseInt(size[1], 10)
-        };
-        if (figureEl.children.length > 1) {
-          // <figcaption> content
-          item.title = figureEl.children[1].innerHTML;
-        }
-        if (linkEl.children.length > 0) {
-          // <img> thumbnail element, retrieving thumbnail url
-          item.msrc = linkEl.children[0].getAttribute('src');
-        }
-        item.el = figureEl;
-        // save link to element for getThumbBoundsFn
-        items.push(item);
-        i++;
-      }
-      return items;
-    };
-    // find nearest parent element
-    closest = function(el, fn) {
-      return el && (fn(el) ? el : closest(el.parentNode, fn));
-    };
-    // triggers when user clicks on thumbnail
-    onThumbnailsClick = function(e) {
-      var childNodes, clickedGallery, clickedListItem, eTarget, i, index, nodeIndex, numChildNodes;
-      e = e || window.event;
-      if (e.preventDefault) {
-        e.preventDefault();
-      } else {
-        (e.returnValue = false);
-      }
-      eTarget = e.target || e.srcElement;
-      // find root element of slide
-      clickedListItem = closest(eTarget, function(el) {
-        return el.tagName && el.tagName.toUpperCase() === 'FIGURE';
-      });
-      if (!clickedListItem) {
-        return;
-      }
-      // find index of clicked item by looping through all child nodes
-      // alternatively, you may define index via data- attribute
-      clickedGallery = clickedListItem.parentNode;
-      childNodes = clickedListItem.parentNode.childNodes;
-      numChildNodes = childNodes.length;
-      nodeIndex = 0;
-      index = void 0;
-      i = 0;
-      while (i < numChildNodes) {
-        if (childNodes[i].nodeType !== 1) {
-          i++;
-          continue;
-        }
-        if (childNodes[i] === clickedListItem) {
-          index = nodeIndex;
-          break;
-        }
-        nodeIndex++;
-        i++;
-      }
-      if (index >= 0) {
-        // open PhotoSwipe if valid index found
-        openPhotoSwipe(index, clickedGallery);
-      }
-      return false;
-    };
-    // parse picture index and gallery index from URL (#&pid=1&gid=2)
-    photoswipeParseHash = function() {
-      var hash, i, pair, params, vars;
-      hash = window.location.hash.substring(1);
-      params = {};
-      if (hash.length < 5) {
-        return params;
-      }
-      vars = hash.split('&');
-      i = 0;
-      while (i < vars.length) {
-        if (!vars[i]) {
-          i++;
-          continue;
-        }
-        pair = vars[i].split('=');
-        if (pair.length < 2) {
-          i++;
-          continue;
-        }
-        params[pair[0]] = pair[1];
-        i++;
-      }
-      if (params.gid) {
-        params.gid = parseInt(params.gid, 10);
-      }
-      return params;
-    };
-    openPhotoSwipe = function(index, galleryElement, disableAnimation, fromURL) {
-      var gallery, items, j, options, pswpElement;
-      pswpElement = document.querySelectorAll('.pswp')[0];
-      gallery = void 0;
-      options = void 0;
-      items = void 0;
-      items = parseThumbnailElements(galleryElement);
-      // define options (if needed)
-      options = {
-        galleryUID: galleryElement.getAttribute('data-pswp-uid'),
-        getThumbBoundsFn: function(index) {
-          var pageYScroll, rect, thumbnail;
-          // See Options -> getThumbBoundsFn section of documentation for more info
-          thumbnail = items[index].el.getElementsByTagName('img')[0];
-          pageYScroll = window.pageYOffset || document.documentElement.scrollTop;
-          rect = thumbnail.getBoundingClientRect();
-          return {
-            x: rect.left,
-            y: rect.top + pageYScroll,
-            w: rect.width
-          };
-        }
-      };
-      // PhotoSwipe opened from URL
-      if (fromURL) {
-        if (options.galleryPIDs) {
-          // parse real index when custom PIDs are used 
-          // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
-          j = 0;
-          while (j < items.length) {
-            if (items[j].pid === index) {
-              options.index = j;
-              break;
-            }
-            j++;
-          }
-        } else {
-          // in URL indexes start from 1
-          options.index = parseInt(index, 10) - 1;
-        }
-      } else {
-        options.index = parseInt(index, 10);
-      }
-      // exit if index not found
-      if (isNaN(options.index)) {
-        return;
-      }
-      if (disableAnimation) {
-        options.showAnimationDuration = 0;
-      }
-      // Pass data to PhotoSwipe and initialize it
-      gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
-      gallery.init();
-    };
-    // loop through all gallery elements and bind events
-    galleryElements = document.querySelectorAll(gallerySelector);
-    i = 0;
-    l = galleryElements.length;
-    while (i < l) {
-      galleryElements[i].setAttribute('data-pswp-uid', i + 1);
-      galleryElements[i].onclick = onThumbnailsClick;
-      i++;
-    }
-    // Parse URL and open gallery if it contains #&pid=3&gid=1
-    hashData = photoswipeParseHash();
-    if (hashData.pid && hashData.gid) {
-      openPhotoSwipe(hashData.pid, galleryElements[hashData.gid - 1], true, true);
-    }
-  };
-
-  // execute above function
-  initPhotoSwipeFromDOM('.gallery');
-
-  // ---
-// generated by js2coffee 2.2.0
-
-}
-
-called();
-// let themeSwitchButton = document.getElementById("switcher")
-// themeSwitchButton.addEventListener("click",function(){
-//     document.body.classList.toggle("color");
-// })
+// js to expand image onclick
+let prodImageScaleOnClick = document.querySelectorAll(".prodImg");
+prodImageScaleOnClick.forEach(element => {
+  element.addEventListener("click", () => {
+    element.classList.toggle("prodImgScale");
+  });
+});
 
 document.addEventListener("DOMContentLoaded", function() {
   captchaCode();
@@ -344,3 +143,297 @@ function sendMessage() {
   messageElement.textContent = "Message sent!";
   document.getElementById("form").appendChild(messageElement);
 }
+
+//meet the team section js starts hereconst cardControllers = document.querySelectorAll("[data-card-controller]");
+
+let cardControllers = document.querySelectorAll("[data-card-controller]");
+cardControllers.forEach(controller => {
+  controller.addEventListener("click", (e) => {
+    const card = e.currentTarget.parentElement.parentElement;
+    const isVisible = card.getAttribute("data-visible") === "true";
+    card.setAttribute("data-visible", isVisible ? "false" : "true");
+  });
+});
+//meet the team section ends here
+
+// let data = [
+//   {
+//     name: "Veggie Delight",
+//     imageSrc: "https://source.unsplash.com/random?veggies",
+//     time: "30 min",
+//     type: "veg",
+//     isLiked: false,
+//     rating: 4.2,
+//   },
+//   {
+//     name: "Chicken Grill",
+//     imageSrc: "https://source.unsplash.com/random?chicken",
+//     time: "45 min",
+//     type: "non-veg",
+//     isLiked: false,
+//     rating: 4.5,
+//   },
+//   {
+//     name: "Cheese Pizza",
+//     imageSrc: "https://source.unsplash.com/random?pizza",
+//     time: "40 min",
+//     type: "veg",
+//     isLiked: false,
+//     rating: 4.1,
+//   },
+//   {
+//     name: "Steak",
+//     imageSrc: "https://source.unsplash.com/random?steak",
+//     time: "60 min",
+//     type: "non-veg",
+//     isLiked: false,
+//     rating: 4.7,
+//   },
+//   {
+//     name: "Grilled Salmon",
+//     imageSrc: "https://source.unsplash.com/random?salmon",
+//     time: "50 min",
+//     type: "non-veg",
+//     isLiked: false,
+//     rating: 4.6,
+//   },
+//   {
+//     name: "Tomato Pasta",
+//     imageSrc: "https://source.unsplash.com/random?pasta",
+//     time: "35 min",
+//     type: "veg",
+//     isLiked: false,
+//     rating: 4.0,
+//   },
+//   {
+//     name: "Vegan Salad",
+//     imageSrc: "https://source.unsplash.com/random?salad",
+//     time: "20 min",
+//     type: "veg",
+//     isLiked: false,
+//     rating: 3.9,
+//   },
+//   {
+//     name: "Fried Chicken",
+//     imageSrc: "https://source.unsplash.com/random?friedChicken",
+//     time: "55 min",
+//     type: "non-veg",
+//     isLiked: false,
+//     rating: 4.3,
+//   },
+//   {
+//     name: "Mushroom Risotto",
+//     imageSrc: "https://source.unsplash.com/random?risotto",
+//     time: "45 min",
+//     type: "veg",
+//     isLiked: false,
+//     rating: 4.5,
+//   },
+//   {
+//     name: "Burger",
+//     imageSrc: "https://source.unsplash.com/random?burger",
+//     time: "30 min",
+//     type: "non-veg",
+//     isLiked: false,
+//     rating: 4.2,
+//   },
+//   {
+//     name: "Paneer Tikka",
+//     imageSrc: "https://source.unsplash.com/random?paneerTikka",
+//     time: "40 min",
+//     type: "veg",
+//     isLiked: false,
+//     rating: 4.4,
+//   },
+//   {
+//     name: "BBQ Ribs",
+//     imageSrc: "https://source.unsplash.com/random?ribs",
+//     time: "70 min",
+//     type: "non-veg",
+//     isLiked: false,
+//     rating: 4.6,
+//   },
+//   {
+//     name: "Caesar Salad",
+//     imageSrc: "https://source.unsplash.com/random?caesarSalad",
+//     time: "25 min",
+//     type: "veg",
+//     isLiked: false,
+//     rating: 3.8,
+//   },
+//   {
+//     name: "Fish Tacos",
+//     imageSrc: "https://source.unsplash.com/random?fishTacos",
+//     time: "35 min",
+//     type: "non-veg",
+//     isLiked: false,
+//     rating: 4.3,
+//   },
+//   {
+//     name: "Chocolate Cake",
+//     imageSrc: "https://source.unsplash.com/random?chocolateCake",
+//     time: "90 min",
+//     type: "veg",
+//     isLiked: false,
+//     rating: 4.9,
+//   },
+// ];
+
+// window.alert("open with microsoft edge")
+// //searh function
+// function filterDataOnInputChange() {
+//   clearBody();
+//   const searchTerm = document.getElementById("search").value.toLowerCase();
+//   const filteredData = data.filter((dataItem) =>
+//     dataItem.name.toLowerCase().includes(searchTerm)
+//   );
+//   displayData(filteredData);
+// }
+// document
+//   .getElementById("search")
+//   .addEventListener("input", filterDataOnInputChange);
+
+// //display data function
+// const mainBody = document.getElementById("mainBody");
+// const allRecipes = document.getElementById("allRecipes");
+// allRecipes.addEventListener("click", displayDataAll);
+
+// function displayData(data) {
+//   for (let i = 0; i < data.length; i++) {
+//     let card = document.createElement("div");
+//     card.className = "card";
+//     card.id = "card";
+//     card.innerHTML = `   <div
+//         class="cardImage"
+//         style="
+//           background-image: url(${data[i].imageSrc});
+//           background-repeat: no-repeat;
+//           background-size: cover;
+//         "
+//       ></div>
+//       <span class="cardType">${data[i].type}</span>
+//       <p class="cardName">${data[i].name}</p>
+//       <div class="cardFooter">
+//           <p>${data[i].time}</p>
+//           <div style="display:flex;align-items:center;">
+//             <img src="like.png" alt="like" loading="lazy" />
+//             <svg
+//                 style="margin:0px 5px;"
+//               xmlns="http://www.w3.org/2000/svg"
+//               width="22"
+//               height="22"
+//               viewBox="0 0 22 22"
+//               fill="none"
+//             >
+//               <g clip-path="url(#clip0_3238_140)">
+//                 <path
+//                   d="M18.9347 15.5907C20.0485 13.6639 20.4228 11.3976 19.9877 9.21499C19.5526 7.03241 18.3377 5.08289 16.5701 3.73063C14.8025 2.37837 12.6031 1.71587 10.3827 1.86689C8.16225 2.01791 6.07277 2.97212 4.50454 4.55127C2.93632 6.13041 1.99663 8.22647 1.86103 10.4479C1.72542 12.6693 2.40317 14.8641 3.76766 16.6222C5.13215 18.3804 7.09006 19.5817 9.27561 20.0017C11.4612 20.4217 13.7249 20.0316 15.6438 18.9044L20.1667 20.1667L18.9347 15.5907Z"
+//                   stroke="#252525"
+//                   stroke-width="2"
+//                   stroke-linejoin="round"
+//                 />
+//               </g>
+//               <defs>
+//                 <clipPath id="clip0_3238_140">
+//                   <rect width="22" height="22" fill="white" />
+//                 </clipPath>
+//               </defs>
+//             </svg>
+//           </div>
+//         </div>`;
+//     mainBody.appendChild(card);
+//   }
+// }
+
+// displayData(data);
+
+// //clearing the current data on display
+// function clearBody() {
+//   mainBody.innerHTML = ``;
+// }
+
+// //display all recipes
+// function displayDataAll() {
+//   clearBody();
+//   for (let i = 0; i < data.length; i++) {
+//     let card = document.createElement("div");
+//     card.className = "card";
+//     card.id = "card";
+//     card.innerHTML = `   <div
+//       class="cardImage"
+//       style="
+//         background-image: url(${data[i].imageSrc});
+//         background-repeat: no-repeat;
+//         background-size: cover;
+//       "
+//     ></div>
+//     <span class="cardType">${data[i].type}</span>
+//     <p class="cardName">${data[i].name}</p>
+//     <div class="cardFooter">
+//         <p>${data[i].time}</p>
+//         <div style="display:flex;align-items:center;">
+//           <img src="like.png" alt="like" loading="lazy" />
+//           <svg
+//               style="margin:0px 5px;"
+//             xmlns="http://www.w3.org/2000/svg"
+//             width="22"
+//             height="22"
+//             viewBox="0 0 22 22"
+//             fill="none"
+//           >
+//             <g clip-path="url(#clip0_3238_140)">
+//               <path
+//                 d="M18.9347 15.5907C20.0485 13.6639 20.4228 11.3976 19.9877 9.21499C19.5526 7.03241 18.3377 5.08289 16.5701 3.73063C14.8025 2.37837 12.6031 1.71587 10.3827 1.86689C8.16225 2.01791 6.07277 2.97212 4.50454 4.55127C2.93632 6.13041 1.99663 8.22647 1.86103 10.4479C1.72542 12.6693 2.40317 14.8641 3.76766 16.6222C5.13215 18.3804 7.09006 19.5817 9.27561 20.0017C11.4612 20.4217 13.7249 20.0316 15.6438 18.9044L20.1667 20.1667L18.9347 15.5907Z"
+//                 stroke="#252525"
+//                 stroke-width="2"
+//                 stroke-linejoin="round"
+//               />
+//             </g>
+//             <defs>
+//               <clipPath id="clip0_3238_140">
+//                 <rect width="22" height="22" fill="white" />
+//               </clipPath>
+//             </defs>
+//           </svg>
+//         </div>
+//       </div>`;
+//     mainBody.appendChild(card);
+//   }
+// }
+
+// //veg only filter
+// const vegOnly = document.getElementById("vegOnly");
+// vegOnly.addEventListener("click", showOnlyVeg);
+// function showOnlyVeg() {
+//   let onlyVeg = data.filter((dataElement) => dataElement.type == "veg");
+//   clearBody();
+//   displayData(onlyVeg);
+// }
+
+// //none veggie filter
+// const noneVeg = document.getElementById("noneVeg");
+// noneVeg.addEventListener("click", showNoneVeg);
+// function showNoneVeg() {
+//   let noneVeggie = data.filter((dataElement) => dataElement.type == "non-veg");
+//   clearBody();
+//   displayData(noneVeggie);
+// }
+
+// //show by rating functions
+// const radio1 = document.getElementById("above");
+// const radio2 = document.getElementById("below");
+// function aboveRating(event) {
+//   if (event.value) {
+//     let ratingStats = data.filter((dataElement) => dataElement.rating > 3.9);
+//     clearBody();
+//     console.log(ratingStats);
+//     displayData(ratingStats);
+//   }
+// }
+// function belowRating(event) {
+//   if (event.value) {
+//     let ratingStats2 = data.filter((dataElement) => dataElement.rating < 4);
+//     clearBody();
+//     displayData(ratingStats2);
+//   }
+// }
