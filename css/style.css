@@ -1168,10 +1168,10 @@ a:focus-visible {
   height: 30px;
   background-color: #e7739a;
   border-radius: 20px;
-  position: absolute;
-  top: 50%;
+ 
+ 
   transform: translateY(-50%);
-  left: 7px;
+  
   box-shadow: inset 10px 10px 15px 0px rgba(255, 255, 255, 0.5), 5px 10px 10px 1px rgba(0, 0, 0, 0.4), inset 0px -10px 10px -1px rgba(184, 147, 33, 1);
   z-index: 3;
   animation: sunFrame-2 1s linear;
@@ -1223,9 +1223,9 @@ a:focus-visible {
   height: 10px;
   border-radius: 15px;
   background-color: #999eaf;
-  position: absolute;
-  top: 20px;
-  left: 10px;
+  
+  
+ 
   opacity: 0;
 }
 
@@ -2836,6 +2836,11 @@ input {
     top: 15px;
   left: 20px;
   }
+  .sun{
+    position: absolute;
+    left: 7px;
+    top: 10px;
+  }
   /* end of blog css */
   .sideBar {
     background-color: #d30186;
@@ -2908,6 +2913,12 @@ input {
   #contact #form{
     width: 320px;
   }
+  
+  .sun-spot{
+    top: 20px;
+    left: 10px;
+    position: absolute;
+  }
 
 }
 
@@ -2919,6 +2930,16 @@ input {
     position: absolute;
   right: 20px;
 
+  }
+    .sun{
+    position: absolute;
+    left: 7px;
+    top: 50%;
+  }
+  .sun-spot{
+    top: 20px;
+    left: 10px;
+    position: absolute;
   }
 
   .containery {
