@@ -28,73 +28,73 @@ btnOne.addEventListener("click", function() {
 
 let data = [
   {
-    name: "Veggie Delight",
+    name: "Tourism",
     imageSrc: "https://source.unsplash.com/random?veggies",
-    time: "30 min",
-    type: "veg",
+    time: "Read time 30 min",
+    type: "tourism",
     isLiked: false,
     rating: 4.2,
     Text:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, sint aspernatur? Facilis rerum cupiditate harum eveniet labore dolore. Placeat sint dolorum doloribus laboriosam! Commodi culpa eius eveniet dignissimos ratione, sint saepe doloremque illum consequatur minus distinctio, nemo est! Saepe provident laudantium rerum ipsam perferendis assumenda, iusto sequi non quaerat est ea fugit magnam praesentium ducimus quisquam similique! Dolore, alias dignissimos.Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis aut inventore sed? Dolores atque dolorem sequi obcaecati sit, iusto nobis."
   },
   {
-    name: "Chicken Grill",
+    name: "karamonja",
     imageSrc: "https://source.unsplash.com/random?chicken",
-    time: "45 min",
-    type: "non-veg",
+    time: "Read time 45 min",
+    type: "tourism",
     isLiked: false,
     rating: 4.5,
     Text:"Lorem ipsum dolor sitLorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, sint aspernatur? Facilis rerum cupiditate harum eveniet labore dolore. Placeat sint dolorum doloribus laboriosam! Commodi culpa eius eveniet dignissimos ratione, sint saepe doloremque illum consequatur minus distinctio, nemo est! Saepe provident laudantium rerum ipsam perferendis assumenda, iusto sequi non quaerat est ea fugit magnam praesentium ducimus quisquam similique! Dolore, alias dignissimos.amet consectetur adipisicing elit. Nobis aut inventore sed? Dolores atque dolorem sequi obcaecati sit, iusto nobis."
   },
   {
-    name: "Veggie Delight",
+    name: "Quiz",
     imageSrc: "https://source.unsplash.com/random?veggies",
-    time: "30 min",
-    type: "veg",
+    time: "Read time 30 min",
+    type: "Parties",
     isLiked: false,
     rating: 4.2,
     Text:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, sint aspernatur? Facilis rerum cupiditate harum eveniet labore dolore. Placeat sint dolorum doloribus laboriosam! Commodi culpa eius eveniet dignissimos ratione, sint saepe doloremque illum consequatur minus distinctio, nemo est! Saepe provident laudantium rerum ipsam perferendis assumenda, iusto sequi non quaerat est ea fugit magnam praesentium ducimus quisquam similique! Dolore, alias dignissimos.Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis aut inventore sed? Dolores atque dolorem sequi obcaecati sit, iusto nobis."
   },
   {
-    name: "Chicken Grill",
+    name: "kampala Events",
     imageSrc: "https://source.unsplash.com/random?chicken",
-    time: "45 min",
-    type: "non-veg",
+    time: "Read time 45 min",
+    type: "Parties",
     isLiked: false,
     rating: 4.5,
     Text:"Lorem ipsum dolor sitLorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, sint aspernatur? Facilis rerum cupiditate harum eveniet labore dolore. Placeat sint dolorum doloribus laboriosam! Commodi culpa eius eveniet dignissimos ratione, sint saepe doloremque illum consequatur minus distinctio, nemo est! Saepe provident laudantium rerum ipsam perferendis assumenda, iusto sequi non quaerat est ea fugit magnam praesentium ducimus quisquam similique! Dolore, alias dignissimos.amet consectetur adipisicing elit. Nobis aut inventore sed? Dolores atque dolorem sequi obcaecati sit, iusto nobis."
   },
   {
-    name: "Veggie Delight",
+    name: "work out routine",
     imageSrc: "https://source.unsplash.com/random?veggies",
-    time: "30 min",
-    type: "veg",
+    time: "Read time 30 min",
+    type: "lifestyle",
     isLiked: false,
     rating: 4.2,
     Text:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, sint aspernatur? Facilis rerum cupiditate harum eveniet labore dolore. Placeat sint dolorum doloribus laboriosam! Commodi culpa eius eveniet dignissimos ratione, sint saepe doloremque illum consequatur minus distinctio, nemo est! Saepe provident laudantium rerum ipsam perferendis assumenda, iusto sequi non quaerat est ea fugit magnam praesentium ducimus quisquam similique! Dolore, alias dignissimos.Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis aut inventore sed? Dolores atque dolorem sequi obcaecati sit, iusto nobis."
   },
   {
-    name: "Chicken Grill",
+    name: "magazine",
     imageSrc: "https://source.unsplash.com/random?chicken",
-    time: "45 min",
-    type: "non-veg",
+    time: "Read time 45 min",
+    type: "lifestyle",
     isLiked: false,
     rating: 4.5,
     Text:"Lorem ipsum dolor sitLorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, sint aspernatur? Facilis rerum cupiditate harum eveniet labore dolore. Placeat sint dolorum doloribus laboriosam! Commodi culpa eius eveniet dignissimos ratione, sint saepe doloremque illum consequatur minus distinctio, nemo est! Saepe provident laudantium rerum ipsam perferendis assumenda, iusto sequi non quaerat est ea fugit magnam praesentium ducimus quisquam similique! Dolore, alias dignissimos.amet consectetur adipisicing elit. Nobis aut inventore sed? Dolores atque dolorem sequi obcaecati sit, iusto nobis."
   },
     {
-    name: "Veggie Delight",
+    name: "Zoo Entebe",
     imageSrc: "https://source.unsplash.com/random?veggies",
-    time: "30 min",
-    type: "veg",
+    time: "Read time 30 min",
+    type: "tourism",
     isLiked: false,
     rating: 4.2,
     Text:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, sint aspernatur? Facilis rerum cupiditate harum eveniet labore dolore. Placeat sint dolorum doloribus laboriosam! Commodi culpa eius eveniet dignissimos ratione, sint saepe doloremque illum consequatur minus distinctio, nemo est! Saepe provident laudantium rerum ipsam perferendis assumenda, iusto sequi non quaerat est ea fugit magnam praesentium ducimus quisquam similique! Dolore, alias dignissimos.Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis aut inventore sed? Dolores atque dolorem sequi obcaecati sit, iusto nobis."
   },
   {
-    name: "Chicken Grill",
+    name: "Miss tourism bootcamp",
     imageSrc: "https://source.unsplash.com/random?chicken",
-    time: "45 min",
-    type: "non-veg",
+    time: "Read time 45 min",
+    type: "tourism",
     isLiked: false,
     rating: 4.5,
     Text:"Lorem ipsum dolor sitLorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, sint aspernatur? Facilis rerum cupiditate harum eveniet labore dolore. Placeat sint dolorum doloribus laboriosam! Commodi culpa eius eveniet dignissimos ratione, sint saepe doloremque illum consequatur minus distinctio, nemo est! Saepe provident laudantium rerum ipsam perferendis assumenda, iusto sequi non quaerat est ea fugit magnam praesentium ducimus quisquam similique! Dolore, alias dignissimos.amet consectetur adipisicing elit. Nobis aut inventore sed? Dolores atque dolorem sequi obcaecati sit, iusto nobis."
