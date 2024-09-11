@@ -1,3 +1,5 @@
+// i slipt the js omponents to different parts so that incase of an error,
+//  its easy to locate and it is localised to on page 
 
 // theme switch js starts here
 let wr = document.querySelector('.wrapper');

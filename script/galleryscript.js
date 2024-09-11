@@ -1,3 +1,7 @@
+// i slipt the js omponents to different parts so that incase of an error,
+//  its easy to locate and it is localised to on page 
+
+
 // let themeSwitchButton = document.getElementById("switcher")
 // themeSwitchButton.addEventListener("click",function(){
 //     document.body.classList.toggle("color");
@@ -252,4 +256,6 @@ function called() {
 
 }
 
+
+//i automatically call the above funtion so it loads immediately
 called();

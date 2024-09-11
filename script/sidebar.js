@@ -1,15 +1,20 @@
-
+// i slipt the js omponents to different parts so that incase of an error,
+//  its easy to locate and it is localised to on page 
 // sidebar js starts
 const sideBarToggle = document.getElementById("icon4");
 sideBarToggle.addEventListener("click", sideBar);
 const logo = document.getElementById("logo");
 const sideBarToggler = document.getElementById("icon4");
 
+
+//sidebar x button, when clicked we remove
 function closeToggle() {
   const toggledContent = document.getElementById("sideBar");
   toggledContent.remove();
 }
 
+
+//we create the sidebar dynamically through js 
 function sideBar() {
   const body = document.getElementById("body");
   const sideBarElement = document.createElement("div");
