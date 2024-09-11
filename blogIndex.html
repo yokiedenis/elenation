@@ -151,6 +151,39 @@
    <div id="mainBody"  style="width: 100%; height: 1000px; overflow-y: scroll; background-color: lightskyblue;"> 
 
    </div>
+   <div id="filter">
+    <div class="filterItem item1">
+      <span>All Articles</span>
+      <svg id="allRecipes" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+        <path d="M14.2697 13L8.9072 7.63749L10.439 6.10565L17.3334 13L10.439 19.8943L8.9072 18.3625L14.2697 13Z"
+          fill="white" />
+      </svg>
+    </div>
+    <div class="filterItem item2">
+      <span>Tourism Only</span>
+      <svg id="vegOnly" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+        <path d="M14.2697 13L8.9072 7.63749L10.439 6.10565L17.3334 13L10.439 19.8943L8.9072 18.3625L14.2697 13Z"
+          fill="white" />
+      </svg>
+    </div>
+    <div class="filterItem item3">
+      <span>Events only </span>
+      <svg id="noneVeg" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+        <path d="M14.2697 13L8.9072 7.63749L10.439 6.10565L17.3334 13L10.439 19.8943L8.9072 18.3625L14.2697 13Z"
+          fill="white" />
+      </svg>
+    </div>
+  </div>
+  <!-- main body content where we add our cards -->
+  <div id="bodyContainer">
+    <div id="rating">
+      <h4>Filters</h4>
+      <p>Rating</p>
+      <input onchange="aboveRating(this)" type="radio" name="rating" id="above" />
+      <label for="above">4 and Above</label><br />
+      <input onchange="belowRating(this)" type="radio" name="rating" id="below" />
+      <label for="below">Below 4</label>
+    </div>
 
 
  
