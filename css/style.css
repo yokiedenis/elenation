@@ -2568,6 +2568,51 @@ input {
 }
 /* meet the team css code ends here */
 
+#topMainBody{
+  background-color: #212121;
+  overflow-x: scroll;
+  width: 80vw;
+  overflow: hidden;
+  padding:0px 22px;
+}
+#topMainBody>div{
+background-color: #303030;
+border-radius: 15px;
+height: 32px;
+width: 53px;
+padding:5px 12px;
+box-sizing: border-box;
+color: white;
+}
+
+#first{
+  width: 47px !important;
+  background-color: white !important;
+  color: black !important ;
+}
+#leftScroll{
+  position: absolute;
+  right: 0;
+  border-radius: 50%;
+  background-color: #212121;
+  border: none;
+}
+#rightScroll{
+  position: absolute;
+  left: 0;
+  border-radius: 50%;
+  background-color: #212121;
+  border: none;
+}
+#leftScroll:hover,#rightScroll:hover{
+background-color: gray;
+}
+.show{
+  display: inline-block;
+}
+.hide{
+  display: none;
+}
 
 
 @media (min-width: 300px) and (max-width: 768px) {
